@@ -1,3 +1,4 @@
+using Bot.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -52,6 +53,8 @@ namespace Bot
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            AppSettings.Key = Configuration["Token"];
         }
     }
 }
