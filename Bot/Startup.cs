@@ -1,4 +1,4 @@
-using Bot.Models;
+using TelegramBot.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Bot
+namespace TelegramBot
 {
     public class Startup
     {
@@ -25,6 +25,8 @@ namespace Bot
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            Bot.Get();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
