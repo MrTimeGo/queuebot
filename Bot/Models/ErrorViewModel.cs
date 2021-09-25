@@ -1,6 +1,6 @@
 using System;
 
-namespace Bot.Models
+namespace TelegramBot.Models
 {
     public class ErrorViewModel
     {
