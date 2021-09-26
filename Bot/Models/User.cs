@@ -9,6 +9,7 @@ namespace TelegramBot.Models
     {
         public string Id { get; set; }
         public string FullName { get; set; }
+        public bool IsAdmin {  get; set; }
         public long TelegramId { get; set; }
         public DateTime BirthdayDate { get; set; }
 
