@@ -7,7 +7,7 @@ namespace TelegramBot.Models
 {
     public class Group
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public long TelegramId { get; set; }
 

@@ -7,13 +7,13 @@ namespace TelegramBot.Models
 {
     public class User
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string FullName { get; set; }
         public bool IsAdmin {  get; set; }
         public long TelegramId { get; set; }
         public DateTime BirthdayDate { get; set; }
 
-        public string GroupId { get; set; }
+        public int GroupId { get; set; }
         public Group Group { get; set; }
 
         public List<Record> Records { get; set; }

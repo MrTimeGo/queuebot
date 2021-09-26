@@ -25,7 +25,7 @@ namespace TelegramBot.Models
 
             commandsList = new List<Command>()
             {
-
+                
             };
 
             var hook = string.Format(AppSettings.Url, "api/message/update");
