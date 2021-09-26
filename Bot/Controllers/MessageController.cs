@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 using System.Web;
 using Telegram.Bot.Types;
 using TelegramBot.Models;
+using TelegramBot.Services;
 
 namespace TelegramBot.Controllers
 {
     public class MessageController : Controller
     {
+        private readonly IQueue queue;
+        public MessageController(IQueue queue)
+        {
+            this.queue = queue;
+        }
         [Route(@"api/message/update")]
         public async Task<OkResult> Update([FromBody]Update update)
         {
@@ -22,7 +28,7 @@ namespace TelegramBot.Controllers
             {
                 if (command.Name == message.Text.Trim().Split(" ", StringSplitOptions.RemoveEmptyEntries).FirstOrDefault())
                 {
-                    command.Execute(message, client);
+                    command.Execute(message, client, queue);
                     break;
                 }
             }

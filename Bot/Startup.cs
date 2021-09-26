@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using TelegramBot.Services;
 
 namespace TelegramBot
 {
@@ -29,6 +30,8 @@ namespace TelegramBot
 
             services.AddDbContext<QueueContext>(options => options.UseSqlServer(connection));
             services.AddControllersWithViews();
+
+            services.AddSingleton<IQueue, QueueService>();
 
             Bot.Get();
         }
